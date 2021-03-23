@@ -65,8 +65,8 @@ for run in readCSVd:
     #run = row
     #print run
 #    if run['id'] in setrunlist:
-    run['Outfm']=outns+run['runname']+'.nc'
-    run['runnum']=(run['runname'])[3:]
+    run['Outfm']=outns+run['id']+'.nc'
+    run['runnum']=(run['id'])
 
 #        currentdir = dirname + run['runname']
     
