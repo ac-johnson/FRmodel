@@ -13,7 +13,7 @@ d = {}
 #d['inspin']='maps/pism_spinup_filron_1km_3006n_1000yr.nc'
 d['inspin']='maps/pism_spinup_filron_bedmap_3km.nc'
 #d['surffile'] = 'maps/filchner_ronne_res1km_new2b_cesm2mean_nolapse.nc'
-d['maps/surface_3km_nolapse.nc']
+d['surffile'] = 'maps/surface_3km_nolapse.nc'
 d['otype'] = 'given'
 d['ofile'] = 'maps/ocean_3km.nc'
 #d['TGPhi']="15.0,40.0,-500,500"

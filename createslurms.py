@@ -18,8 +18,8 @@ import os
 defaultfile = 'config/defaults_sens.npy'
 inputfile = 'config/sens_inputs.csv'
 outns = ''              #out name start
-rundir = '/import/c1/ICESHEET/ICESHEET/uaf-antarctica/filron/filron_runs/sens/'
-runcmddir = 'runcmds/'
+rundir = '/import/c1/ICESHEET/ICESHEET/uaf-antarctica/filron/filron_runs/'
+runcmddir = 'sens/runcmds/'
 
 
 #TESTCOMMENT
@@ -27,15 +27,19 @@ runcmddir = 'runcmds/'
 #    
 #    runname,sfile,NN,PART,mx,my,Inspin,Inboot
 
-setrunlist = range(12,21)
+#setrunlist = range(,21)
 #setrunlist = [21]
-dorunlist = range(12,21)
+#dorunlist = range(12,21)
 #dorunlist = []
+doruns = 0
+
+parition = 'debug'
+nodes = '48'
 
 #runnums = np.array(setrunlist)
 
-setrunlist = ['run'+str(i) for i in setrunlist]
-dorunlist = ['run'+str(i) for i in dorunlist]
+#setrunlist = ['run'+str(i) for i in setrunlist]
+#dorunlist = ['run'+str(i) for i in dorunlist]
 
 
 defaults = np.load(defaultfile,allow_pickle=True).item()
@@ -60,46 +64,47 @@ print(os.system('pwd'))
 for run in readCSVd:
     #run = row
     #print run
-    if run['runname'] in setrunlist:
-        run['Outfm']=outns+run['runname']+'.nc'
-        run['runnum']=(run['runname'])[3:]
+#    if run['id'] in setrunlist:
+    run['Outfm']=outns+run['runname']+'.nc'
+    run['runnum']=(run['runname'])[3:]
 
 #        currentdir = dirname + run['runname']
-        
+    
 #        print(currentdir)        
-        #Create run directory if it does not exist:
+    #Create run directory if it does not exist:
 #        if not os.path.exists(currentdir):
 #            print('creating dir for: '+run['runname'])
 #            os.makedirs(currentdir)
 
-        #Add in default values
-        adddefaults(run,defaultfile)
+    #Add in default values
+    adddefaults(run,defaultfile)
 
-        sfile=run['sfile']
-        os.system('cp '+sfile+' runtemp.slurm')
+    sfile=run['sfile']
+    os.system('cp '+sfile+' runtemp.slurm')
 #        os.system('rm ' + currentdir +'/run.slurm')
 
-        #Set up the sbatch tasks and partitions:
-        #   (This cannot be done with variables other than just writing
-        #   a new file)        
-        f = open('runtemp.slurm','r+')
-        s = f.read()
-        #print "%s, ecalvK: %s" % (run['runname'],run['ecalvK'])
-        #print run['Outloc']
-        for key in run.keys():
-            s = s.replace('$'+str(key),str(run[str(key)]))
-            f.seek(0)
-
+    #Set up the sbatch tasks and partitions:
+    #   (This cannot be done with variables other than just writing
+    #   a new file)        
+    f = open('runtemp.slurm','r+')
+    s = f.read()
+    #print "%s, ecalvK: %s" % (run['runname'],run['ecalvK'])
+    #print run['Outloc']
+    for key in run.keys():
+        s = s.replace('$'+str(key),str(run[str(key)]))
         f.seek(0)
-        f.write(s)
-        f.close()
-        
-        os.system('cp runtemp.slurm runcmds/%s.slurm'%run['runname'])
-        os.system('rm runtemp.slurm')
+
+    f.seek(0)
+    f.write(s)
+    f.close()
     
-    if run['runname'] in dorunlist:
+    os.system('cp runtemp.slurm sens/runcmds/%s.slurm'%run['runname'])
+    os.system('rm runtemp.slurm')
+
+    #if run['runname'] in dorunlist:
+    if doruns==1:
         os.system('sbatch runcmds/%s.slurm'%run['runname'])
-#        os.system('cd '+ currentdir + '; sbatch run.slurm')
+    #        os.system('cd '+ currentdir + '; sbatch run.slurm')
     
 
 #mpiexec -n $NN -machinefile ./nodes.$SLURM_JOB_ID pismr -i $Inspin \
