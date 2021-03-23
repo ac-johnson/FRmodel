@@ -26,7 +26,8 @@ outfile = options.OUTFILE[-1]
 distributions = {
     "SIAe" : uniform(loc=0.5,scale=3.5),
     "SSAe" : uniform(loc=0.5,scale=2),
-    "eigencalvK" : uniform(loc=1e15,scale=1e17),
+#    "eigencalvK" : uniform(loc=1e15,scale=1e17),
+    "TEFO" : uniform(0.01,scale=0.08),
     "topg_to_phi_base" : uniform(loc=-1000,scale=1000),
     "topg_to_phi_range" : uniform(loc=500,scale=2000)
 #    "wind_speed": uniform(loc=5, scale=25),  # uniform between 5 and 30
