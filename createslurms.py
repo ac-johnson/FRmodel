@@ -15,7 +15,7 @@ import csv
 import numpy as np
 import os
 
-defaultfile = 'config/defaults_sens.npy'
+defaultfile = 'home/acjohnson16/FRmodel/config/defaults_sens.npy'
 inputfile = 'config/sens_inputs.csv'
 outns = ''              #out name start
 rundir = '/import/c1/ICESHEET/ICESHEET/uaf-antarctica/filron/filron_runs/'
