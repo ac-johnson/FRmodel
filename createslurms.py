@@ -33,7 +33,7 @@ runcmddir = 'sens/runcmds/'
 #dorunlist = []
 doruns = 0
 
-parition = 'debug'
+partition = 'debug'
 nodes = '48'
 
 #runnums = np.array(setrunlist)
@@ -67,6 +67,8 @@ for run in readCSVd:
 #    if run['id'] in setrunlist:
     run['Outfm']=outns+run['id']+'.nc'
     run['runnum']=(run['id'])
+    run['PART'] = partition
+    run['NN'] = nodes
 
 #        currentdir = dirname + run['runname']
     
