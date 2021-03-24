@@ -31,9 +31,9 @@ runcmddir = 'sens/runcmds/'
 #setrunlist = [21]
 #dorunlist = range(12,21)
 #dorunlist = []
-doruns = 0
+doruns = 1
 
-partition = 'debug'
+partition = 't2small'
 nodes = '48'
 
 #runnums = np.array(setrunlist)
@@ -105,7 +105,7 @@ for run in readCSVd:
 
     #if run['runname'] in dorunlist:
     if doruns==1:
-        os.system('sbatch runcmds/sens_run%s.slurm'%run['id'])
+        os.system('sbatch sens/runcmds/sens_run%s.slurm'%run['id'])
     #        os.system('cd '+ currentdir + '; sbatch run.slurm')
     
 
