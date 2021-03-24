@@ -98,12 +98,12 @@ for run in readCSVd:
     f.write(s)
     f.close()
     
-    os.system('cp runtemp.slurm sens/runcmds/sens_run%i.slurm'%run['id'])
+    os.system('cp runtemp.slurm sens/runcmds/sens_run%s.slurm'%run['id'])
     os.system('rm runtemp.slurm')
 
     #if run['runname'] in dorunlist:
     if doruns==1:
-        os.system('sbatch runcmds/sens_run%i.slurm'%run['id'])
+        os.system('sbatch runcmds/sens_run%s.slurm'%run['id'])
     #        os.system('cd '+ currentdir + '; sbatch run.slurm')
     
 
