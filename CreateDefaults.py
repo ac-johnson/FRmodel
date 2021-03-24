@@ -11,7 +11,7 @@ import numpy as np
 d = {}
 
 #d['inspin']='maps/pism_spinup_filron_1km_3006n_1000yr.nc'
-d['inspin']='maps/pism_spinup_filron_bedmap_3km.nc'
+d['inspin']='maps/pism_spinup_filron_3km_bedmap.nc'
 #d['surffile'] = 'maps/filchner_ronne_res1km_new2b_cesm2mean_nolapse.nc'
 d['surffile'] = 'maps/surface_3km_nolapse.nc'
 d['otype'] = 'given'

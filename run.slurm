@@ -7,7 +7,7 @@
 #SBATCH --account=ICESHEET
 #SBATCH --mail-user=acjohnson16@alaska.edu
 #SBATCH --mail-type=FAIL
-#SBATCH --output=$sloc/logs/pismlog_$rnum.%j
+#SBATCH --output=$sloc/logs/pismlog_$id.%j
 
 umask 007
 ulimit -s unlimited
