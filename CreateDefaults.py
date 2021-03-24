@@ -25,7 +25,7 @@ d['SIAe'] = 1.0
 d['SSAe'] = 1.0
 d['PPQ'] = 0.75
 d['TEFO']=0.04
-d['sloc']='sens/'
+d['sloc']='sens'
 d['sfile']='run.slurm'
 
 #d['SIAe']=1.0
