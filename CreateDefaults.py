@@ -11,16 +11,18 @@ import numpy as np
 d = {}
 
 #d['inspin']='maps/pism_spinup_filron_1km_3006n_1000yr.nc'
-d['inspin']='maps/pism_spinup_filron_3km_bedmap.nc'
+#d['inspin']='maps/pism_spinup_filron_3km_bedmap.nc'
+d['inspin']='maps/pism_spinup_filron_2km_bedmachine.nc'
 #d['surffile'] = 'maps/filchner_ronne_res1km_new2b_cesm2mean_nolapse.nc'
-d['surffile'] = 'maps/surface_3km_nolapse.nc'
+d['surffile'] = 'maps/surface_2km_nolapse.nc'
 d['otype'] = 'given'
-d['ofile'] = 'maps/ocean_3km.nc'
+d['ofile'] = 'maps/ocean_2km.nc'
 #d['TGPhi']="15.0,40.0,-500,500"
 d['TGP2'] = -900.0
 d['TGP3'] = 1500.0
 d['frontretreatfile'] = 'maps/filchner_ronne_res1km_new2b_cesm2mean_nolapse.nc'
-d['yearend'] = 1050
+#d['yearend'] = 1050
+d['yearend'] = 1020
 d['SIAe'] = 1.0
 d['SSAe'] = 1.0
 d['PPQ'] = 0.75
