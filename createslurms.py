@@ -31,7 +31,7 @@ runcmddir = 'sens/runcmds/'
 #setrunlist = [21]
 #dorunlist = range(12,21)
 #dorunlist = []
-doruns = 1
+doruns = 0
 
 partition = 't2small'
 nodes = '48'
