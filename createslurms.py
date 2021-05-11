@@ -110,7 +110,7 @@ for run in readCSVd:
         runcheck=1
         if dorunlist:
             if int(run['id']) not in dorunlist:
-                runcheck==0
+                runcheck=0
         if runcheck==1:
             os.system('sbatch sens/runcmds/sens_run%s.slurm'%run['id'])
     #        os.system('cd '+ currentdir + '; sbatch run.slurm')

@@ -24,14 +24,21 @@ norm_ord = 2
 docomparison=1
 
 velmap = gdal.Open(vfloc).ReadAsArray()
+
+#add bound lines around the edge of the map:
+newvelmap = np.zeros(np.shape(velmap))-999
+bandpix=15
+newvelmap[bandpix:-bandpix,bandpix:-bandpix]=velmap[bandpix:-bandpix,bandpix:-bandpix]
+velmap = newvelmap
+
 nanmap = velmap < 0
 velmap[nanmap]=0
 
 velmap = np.ma.masked_array(velmap,mask=nanmap)
 
-#plt.figure()
-#plt.imshow(velmap)
-#plt.colorbar()
+plt.figure()
+plt.imshow(velmap)
+plt.colorbar()
 
 diffnorms = np.zeros(nlen)
 diffnormsg= np.zeros(nlen)
@@ -77,10 +84,12 @@ if docomparison==1:
         diffnorms[nn]=np.linalg.norm(diffmap,ord=norm_ord)
         
         #get mask:
-        if nn==0:
-            imask = data.variables['mask'][0]
+        if nn==0:            
+            imask = data.variables['mask'][0]            
             imask = imask==3
             imask = np.flipud(imask)
+        
+        
         
         pvmapg = np.ma.masked_array(pvmap,mask=pvmap.mask | imask)
         
