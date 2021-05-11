@@ -32,6 +32,8 @@ runcmddir = 'sens/runcmds/'
 #dorunlist = range(12,21)
 #dorunlist = []
 doruns = 1
+dorunlist = range(30)
+
 
 partition = 't2small'
 nodes = '48'
@@ -105,7 +107,12 @@ for run in readCSVd:
 
     #if run['runname'] in dorunlist:
     if doruns==1:
-        os.system('sbatch sens/runcmds/sens_run%s.slurm'%run['id'])
+        runcheck=1
+        if dorunlist:
+            if int(run['id']) not in dorunlist:
+                runcheck==0
+        if runcheck==1:
+            os.system('sbatch sens/runcmds/sens_run%s.slurm'%run['id'])
     #        os.system('cd '+ currentdir + '; sbatch run.slurm')
     
 
