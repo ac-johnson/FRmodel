@@ -17,9 +17,9 @@ from scipy import stats
 
 pfloc = '/media/andrew/Clathrate/APModel_util/filron/sens/output' #pism output file loc
 vfloc = '/media/andrew/Clathrate/APModel_util/filron/sens/Vel_align.tif' #NOTE: this is 2km file
-cfile = 'config/sens_inputs.csv'   #config file
+cfile = 'config/sens_inputs_SAVED.csv'   #config file
 nlen = 48
-norm_ord = 2
+norm_ord = 'fro'
 
 docomparison=1
 
