@@ -17,9 +17,11 @@ from scipy import stats
 
 pfloc = '/media/andrew/Clathrate/APModel_util/filron/sens/output' #pism output file loc
 vfloc = '/media/andrew/Clathrate/APModel_util/filron/sens/Vel_align.tif' #NOTE: this is 2km file
-cfile = 'config/sens_inputs_SAVED.csv'   #config file
-nlen = 48
-norm_ord = 'fro'
+#cfile = 'config/sens_inputs_SAVED.csv'   #config file
+cfile = 'config/sens_inputs.csv'   #config file
+nlen = 104
+#norm_ord = 'fro'
+norm_ord = 2
 
 docomparison=1
 
@@ -97,6 +99,8 @@ if docomparison==1:
         diffnormsg[nn]=np.linalg.norm(diffmapg,ord=norm_ord)
         
         data.close()
+        if nn%10 == 0:
+            print(nn)
         
     print('finished velocity comparisons')
 
