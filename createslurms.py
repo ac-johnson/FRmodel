@@ -32,7 +32,7 @@ runcmddir = 'sens/runcmds/'
 #dorunlist = range(12,21)
 #dorunlist = []
 doruns = 0
-dorunlist = range(0,1 )
+dorunlist = range(0,50)
 
 
 partition = 't2small'
