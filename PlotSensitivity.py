@@ -19,9 +19,9 @@ pfloc = '/media/andrew/Clathrate/APModel_util/filron/sens/output' #pism output f
 vfloc = '/media/andrew/Clathrate/APModel_util/filron/sens/Vel_align.tif' #NOTE: this is 2km file
 #cfile = 'config/sens_inputs_SAVED.csv'   #config file
 cfile = 'config/sens_inputs.csv'   #config file
-nlen = 104
-#norm_ord = 'fro'
-norm_ord = 2
+nlen = 160
+norm_ord = 'fro'
+#norm_ord = 2
 
 docomparison=1
 
