@@ -32,7 +32,7 @@ runcmddir = 'sens/runcmds/'
 #dorunlist = range(12,21)
 #dorunlist = []
 doruns = 0
-dorunlist = range(0,1)
+dorunlist = range(0,1 )
 
 
 partition = 't2small'
@@ -73,7 +73,7 @@ for run in readCSVd:
     run['NN'] = nodes
     if run['topg_to_phi_base']:
         run['TGP2']=run['topg_to_phi_base']
-        run['TGP3']=run['topg_to_phi_base']+run['topg_to_phi_range']
+        run['TGP3']=float(run['topg_to_phi_base'])+float(run['topg_to_phi_range'])
 
 #        currentdir = dirname + run['runname']
     
