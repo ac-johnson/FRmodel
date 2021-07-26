@@ -16,20 +16,21 @@ d = {}
 d['inspin']='maps/pism_spinup3_filron_2km_bedmachine.nc'
 #d['surffile'] = 'maps/filchner_ronne_res1km_new2b_cesm2mean_nolapse.nc'
 d['surffile'] = 'maps/surface_2km_nolapse.nc'
-d['otype'] = 'given'
-d['ofile'] = 'maps/ocean_2km.nc'
+d['otype'] = 'pico'
+#d['ofile'] = 'maps/pico/ocean_pico_2km_0C.nc'
 #d['TGPhi']="15.0,40.0,-500,500"
 d['TGP2'] = -900.0
 d['TGP3'] = 1500.0
 d['frontretreatfile'] = 'maps/filchner_ronne_res1km_new2b_cesm2mean_nolapse.nc'
 #d['yearend'] = 1050
-d['yearend'] = 1530
+d['yearend'] = 1555
 d['SIAe'] = 1.0
 d['SSAe'] = 1.0
 d['PPQ'] = 0.75
 d['TEFO']=0.04
-d['sloc']='sens'
-d['sfile']='run.slurm'
+#d['sloc']='picoruns'
+d['sfile']='run_pico.slurm'
+#d['ens']
 
 #d['SIAe']=1.0
 #d['SSAe']=0.60
@@ -58,7 +59,7 @@ d['sfile']='run.slurm'
 #Or look at ocean.sub_shelf_heat_flux_into_ice  (default is 0.5 W m-2)
 
 #print d
-np.save('config/defaults_sens.npy',d)
+np.save('config/defaults_pico.npy',d)
 
 
 

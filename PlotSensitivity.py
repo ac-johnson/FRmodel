@@ -18,10 +18,13 @@ from scipy import stats
 pfloc = '/media/andrew/Clathrate/APModel_util/filron/sens/output' #pism output file loc
 vfloc = '/media/andrew/Clathrate/APModel_util/filron/sens/Vel_align.tif' #NOTE: this is 2km file
 #cfile = 'config/sens_inputs_SAVED.csv'   #config file
-cfile = 'config/sens_inputs.csv'   #config file
-nlen = 160
+cfile = 'config/sens_inputs_clipped.csv'   #config file
+nlen = 200
 norm_ord = 'fro'
 #norm_ord = 2
+
+
+#trows = 400
 
 docomparison=1
 
@@ -67,6 +70,19 @@ for run in readCSVd:
     print(run)
 
 ### COMPARE PISM DATA ###
+
+#Get mask
+def getmap(infile,var):
+    dst = nc.Dataset(infile)
+    outmap = dst.variables[var][:]
+    dst.close()
+    
+    return outmap[0]
+
+imask = getmap('/media/andrew/Clathrate/APModel_util/filron/sens/old_output/result_0.nc','mask')
+imask = imask==3
+imask = np.flipud(imask)
+
 if docomparison==1:
     print('starting velocity comparisons')
     for nn in range(nlen):
@@ -86,10 +102,10 @@ if docomparison==1:
         diffnorms[nn]=np.linalg.norm(diffmap,ord=norm_ord)
         
         #get mask:
-        if nn==0:            
-            imask = data.variables['mask'][0]            
-            imask = imask==3
-            imask = np.flipud(imask)
+#        if nn==0:            
+#            imask = data.variables['mask'][0]            
+#            imask = imask==3
+#            imask = np.flipud(imask)
         
         
         
