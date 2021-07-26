@@ -18,7 +18,7 @@ import os
 runtemp = '2C'
 
 defaultfile = '/home/acjohnson16/FRmodel/config/defaults_pico.npy'
-inputfile = 'config/sens_inputs.csv'
+inputfile = 'config/X_posterior.csv'
 outns = ''  #out name start
 rundir = '/import/c1/ICESHEET/ICESHEET/uaf-antarctica/filron/filron_runs/'
 ofile = 'maps/pico/ocean_pico_2km_%s.nc' % runtemp
@@ -39,7 +39,7 @@ doruns = 0
 dorunlist = range(0,100)
 maxrunnum = 200
 
-partition = 'FUTURARC'
+partition = 't2small'
 nodes = '48'
 
 #runnums = np.array(setrunlist)
