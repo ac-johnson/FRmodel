@@ -36,7 +36,7 @@ runcmddir = '%s/runcmds/'%sloc
 #dorunlist = range(12,21)
 #dorunlist = []
 doruns = 1
-dorunlist = range(0,50)
+dorunlist = range(0,100)
 maxrunnum = 200
 
 partition = 't2small'
