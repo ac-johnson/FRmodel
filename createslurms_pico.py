@@ -18,7 +18,7 @@ import os
 runtemp = '2C'
 
 defaultfile = '/home/acjohnson16/FRmodel/config/defaults_pico.npy'
-inputfile = 'config/X_posterior.csv'
+inputfile = 'config/X_posterior_small.csv'
 outns = ''  #out name start
 rundir = '/import/c1/ICESHEET/ICESHEET/uaf-antarctica/filron/filron_runs/'
 ofile = 'maps/pico/ocean_pico_2km_%s.nc' % runtemp
