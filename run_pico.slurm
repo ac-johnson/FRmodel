@@ -1,6 +1,7 @@
 #!/bin/bash
 
 #SBATCH --partition=$PART
+#SBATCH --reservation=FUTURARC
 #SBATCH --job-name=FRp$runtemp$id
 #SBATCH --ntasks=$NN
 #SBATCH --tasks-per-node=24
