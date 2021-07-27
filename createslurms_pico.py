@@ -18,7 +18,7 @@ import numpy as np
 import os
 import sys
 
-if len(sys.argv1)>1:
+if len(sys.argv)>1:
     runtemp = sys.argv[1]
 else:
     runtemp = '2C'
