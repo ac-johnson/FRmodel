@@ -24,4 +24,4 @@ print(os.system('pwd'))
 
 for i in runlist:
     for T in templist:
-        os.system('sbatch picoruns/ocean_%T/runcmds/pico_run%s.slurm'%(i,T))
+        os.system('sbatch picoruns/ocean_%s/runcmds/pico_run%s.slurm'%(i,T))
