@@ -14,7 +14,7 @@ import pylab as plt
 n_samples = 500
 
 post_loc = 'config/X_posterior.csv.gz'
-post_loc = 'import/c1/ICESHEET/ICESHEET/uaf-antarctica/config/X_posterior.csv.gz'
+post_loc = '/import/c1/ICESHEET/ICESHEET/uaf-antarctica/config/X_posterior.csv.gz'
 
 X_posterior = pd.read_csv(post_loc)
 
