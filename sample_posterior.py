@@ -13,8 +13,10 @@ import pylab as plt
 # The number of allowable model runs
 n_samples = 500
 
+post_loc = 'config/X_posterior.csv.gz'
+post_loc = 'import/c1/ICESHEET/ICESHEET/uaf-antarctica/config/X_posterior.csv.gz'
 
-X_posterior = pd.read_csv("config/X_posterior.csv.gz")
+X_posterior = pd.read_csv(post_loc)
 
 # Names of all the variables that do not appear in X
 keys = list(X_posterior.keys()[1:])
