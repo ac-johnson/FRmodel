@@ -10,8 +10,8 @@ PLEASE HAVE ARGUMENTS
 import os
 import sys
 
-runlist_start = sys.argv[1]
-runlist_stop = sys.argv[2]
+runlist_start = int(sys.argv[1])
+runlist_stop = int(sys.argv[2])
 
 runlist = range(runlist_start,runlist_stop)
 
