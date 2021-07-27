@@ -10,12 +10,20 @@ Created on Fri Mar 30 11:49:07 2018
 # Use the "CreateDefaults" script to create a numpy array of default values.
 # Create an input CSV. The first line should be keys which align with the
 #   keys from the defaults file, and then values entered for each run.
+#
+# give number for degrees
 
 import csv
 import numpy as np
 import os
+import sys
 
-runtemp = '2C'
+if len(sys.argv1)>1:
+    runtemp = sys.argv[1]
+else:
+    runtemp = '2C'
+
+print(runtemp)
 
 defaultfile = '/home/acjohnson16/FRmodel/config/defaults_pico.npy'
 inputfile = 'config/X_posterior_small.csv'
@@ -37,7 +45,7 @@ runcmddir = '%s/runcmds/'%sloc
 #dorunlist = []
 doruns = 0
 dorunlist = range(0,100)
-maxrunnum = 200
+maxrunnum = 400
 
 partition = 't2small'
 nodes = '48'
