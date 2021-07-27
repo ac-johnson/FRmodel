@@ -27,7 +27,7 @@ X_sample = X_posterior.to_numpy()[mc_indices, 1:]
 
 # Convert to Pandas dataframe, append column headers, output as csv
 df = pd.DataFrame(X_sample)
-df.to_csv("random_posterior_samples.csv", header=keys, index=True)
+df.to_csv("config/random_posterior_samples.csv", header=keys, index=True)
 
 fig, axs = plt.subplots(len(keys[0:6]), 1)
 fig.set_size_inches(6, 8)
