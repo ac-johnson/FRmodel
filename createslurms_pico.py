@@ -26,7 +26,7 @@ else:
 print(runtemp)
 
 defaultfile = '/home/acjohnson16/FRmodel/config/defaults_pico.npy'
-inputfile = 'config/random_posterior_sample.csv'
+inputfile = 'config/random_posterior_samples.csv'
 outns = ''  #out name start
 rundir = '/import/c1/ICESHEET/ICESHEET/uaf-antarctica/filron/filron_runs/'
 ofile = 'maps/pico/ocean_pico_2km_%s.nc' % runtemp
