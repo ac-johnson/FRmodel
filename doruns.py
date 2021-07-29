@@ -15,7 +15,8 @@ runlist_stop = int(sys.argv[2])
 
 runlist = range(runlist_start,runlist_stop)
 
-templist=['0C','2C','4C','6C']
+#templist=['0C','2C','4C','6C']
+templist = ['0C','2C','4C']
 
 rundir = '/import/c1/ICESHEET/ICESHEET/uaf-antarctica/filron/filron_runs/'
 
