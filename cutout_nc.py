@@ -43,4 +43,4 @@ for i in runlist:
     for T in templist:
         opdir = rundir+'picoruns/ocean_'+T+'/output/'
 #        os.system('sbatch picoruns/ocean_%s/runcmds/pico_run%s.slurm'%(T,i))
-        os.system('ncks -A -v x,y,mask,thk,velsurf_mag,flux_mag %sresult_%i.nc %s/result_thin_%i.nc'%(opdir,i,opdir,i))
+        os.system('ncks -A -v x,y,mask,thk,velsurf_mag,flux_mag %sresult_%i.nc %sresult_thin_%i.nc'%(opdir,i,opdir,i))
