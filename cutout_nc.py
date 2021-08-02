@@ -15,7 +15,7 @@ import sys
 
 runlist_start = int(sys.argv[1])
 runlist_stop = int(sys.argv[2])
-runtemp = sys.argv[3]
+#runtemp = sys.argv[3]
 
 #
 runlist = range(runlist_start,runlist_stop)
