@@ -24,13 +24,15 @@ options = parser.parse_args()
 n_samples = options.n_samples
 outfile = options.OUTFILE[-1]
 distributions = {
-    "SIAe" : uniform(loc=0.5,scale=3.5),
-    "SSAe" : uniform(loc=0.4,scale=1.2),
+    "SIAe" : uniform(loc=0.25,scale=2.25),
+    "SSAe" : uniform(loc=0.5,scale=1.0),
 #    "eigencalvK" : uniform(loc=1e15,scale=1e17),
-    "TEFO" : uniform(0.01,scale=0.08),
-    "topg_to_phi_base" : uniform(loc=-1500,scale=1500),
-    "topg_to_phi_range" : uniform(loc=500,scale=2000),
-    "PPQ" : uniform(loc=0.25,scale=0.75)
+    "TEFO" : uniform(0.03,scale=0.08),
+    "PPQ" : uniform(loc=0.25,scale=0.75),
+#    "topg_to_phi_base" : uniform(loc=-1500,scale=1500),
+    "topg_to_phi_base" : uniform(loc=-1500,scale=2000),
+#    "topg_to_phi_range" : uniform(loc=500,scale=2000),
+    "topg_to_phi_range" : uniform(loc=500,scale=2000)
 }#    "wind_speed": uniform(loc=5, scale=25),  # uniform between 5 and 30
 #    "wind_direction": uniform(loc=200, scale=50),  # uniform between 200 and 250
 #    "water_vapor_scale_height": uniform(loc=1000, scale=2000),  # uniform between 1000 and 3000
