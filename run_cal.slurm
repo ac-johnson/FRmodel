@@ -1,7 +1,6 @@
 #!/bin/bash
 
 #SBATCH --partition=$PART
-#SBATCH --reservation=FUTURARC
 #SBATCH --job-name=FRcal$id
 #SBATCH --ntasks=$NN
 #SBATCH --tasks-per-node=24
