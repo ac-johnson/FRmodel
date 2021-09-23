@@ -52,5 +52,3 @@ header = keys
 # Convert to Pandas dataframe, append column headers, output as csv
 df = pd.DataFrame(data=dist_sample, columns=header)
 df.to_csv(outfile, index=True, index_label="id")
-
-#test

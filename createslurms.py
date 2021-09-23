@@ -15,8 +15,14 @@ import csv
 import numpy as np
 import os
 
-defaultfile = '/home/acjohnson16/FRmodel/config/defaults_sens.npy'
-inputfile = 'config/sens_inputs.csv'
+#defaultfile = '/home/acjohnson16/FRmodel/config/defaults_sens.npy'
+#inputfile = 'config/sens_inputs.csv'
+#outns = ''              #out name start
+#rundir = '/import/c1/ICESHEET/ICESHEET/uaf-antarctica/filron/filron_runs/'
+#runcmddir = 'sens/runcmds/'
+
+defaultfile = '/home/acjohnson16/FRmodel/config/defaults_calibration.npy'
+inputfile = 'config/calibration_set.csv'
 outns = ''              #out name start
 rundir = '/import/c1/ICESHEET/ICESHEET/uaf-antarctica/filron/filron_runs/'
 runcmddir = 'sens/runcmds/'
