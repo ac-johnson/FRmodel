@@ -25,10 +25,12 @@ mpiexec -n $NN -machinefile ./nodes.$SLURM_JOB_ID pismr -i $inspin -surface give
 #-extra_file $sloc/extra/extra_$id.nc -extra_times -1:5:2000 -extra_vars velbar_mag,mask,dbdt,topg,thk,usurf,ice_surface_temp,climatic_mass_balance,bmelt,tillwat,velsurf_mag,diffusivity 
 
 #ncks -A -v x,y,lat,lon,velsurf_mag,thk $sloc/output/result_medium_$id.nc $sloc/output/result_thin_$id.nc
-ncks -4 -L 2 $sloc/output/result_medium_$id.nc $sloc/output/result_$id.nc
+#THIS IS THE PROPER FILE
+ncks -A -v x,y,lat,lon,velsurf_mag,thk $sloc/output/result_medium_$id.nc $sloc/output/result_thin_$id.nc
+ncks -4 -L 2 $sloc/output/result_thin_$id.nc $sloc/output/result_$id.nc
 
 rm $sloc/output/result_medium_$id.nc
-#rm $sloc/output/result_thin_$id.nc
+rm $sloc/output/result_thin_$id.nc
 
 # Clean up the machinefile
 rm ./nodes.$SLURM_JOB_ID
