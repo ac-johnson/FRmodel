@@ -3,7 +3,7 @@
 """
 Created on Mon Jul 26 18:34:31 2021
 
-@author: andrew
+@author: andrew (kinda)
 """
 
 import numpy as np
@@ -13,8 +13,8 @@ import pylab as plt
 # The number of allowable model runs
 n_samples = 500
 
-post_loc = 'config/X_posterior.csv.gz'
-post_loc = '/import/c1/ICESHEET/ICESHEET/uaf-antarctica/X_posterior.csv.gz'
+post_loc = 'config/X_posterior_v2.csv.gz'
+#post_loc = '/import/c1/ICESHEET/ICESHEET/uaf-antarctica/X_posterior_v2.csv.gz'
 
 X_posterior = pd.read_csv(post_loc)
 
