@@ -25,7 +25,6 @@ mpiexec -n $NN -machinefile ./nodes.$SLURM_JOB_ID pismr -i $inspin -surface give
 
 ncks -A -v x,y,lat,lon,velsurf_mag,thk $sloc/output/result_medium_$id.nc $sloc/output/result_thin_$id.nc
 ncks -4 -L 2 $sloc/output/result_thin_$id.nc $sloc/output/result_$id.nc
-ncks -4 -L 2 $sloc/output/result_thin_$id.nc $sloc/output/result_$id.nc
 ncks -4 -L 2 $sloc/extra/extra_large_$id.nc $sloc/extra/extra_$id.nc
 
 rm $sloc/output/result_medium_$id.nc
