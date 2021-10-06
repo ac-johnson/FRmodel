@@ -29,9 +29,10 @@ ncks -4 -L 2 $sloc/extra/extra_large_$id.nc $sloc/extra/extra_$id.nc
 
 rm $sloc/output/result_medium_$id.nc
 rm $sloc/output/result_thin_$id.nc
+rm $sloc/extra/extra_large_$id.nc
 rm $sloc/output/result_medium_$id_backup.nc
 rm $sloc/output/result_medium_$id_backup.nc~
-rm $sloc/extra/extra_large_$id.nc
+
 
 # Clean up the machinefile
 rm ./nodes.$SLURM_JOB_ID
