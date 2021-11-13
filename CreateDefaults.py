@@ -29,7 +29,7 @@ d['SSAe'] = 1.0
 d['PPQ'] = 0.75
 d['TEFO']=0.04
 d['sloc']='picoruns'
-d['sfile']='run_rcp26.slurm'
+d['sfile']='run_rcp85.slurm'
 #d['ens']
 #d['rcp']
 
@@ -61,7 +61,7 @@ d['sfile']='run_rcp26.slurm'
 
 #print d
 #np.save('config/defaults_calibration.npy',d)
-np.save('config/defaults_rcp26.npy',d)
+np.save('config/defaults_rcp85.npy',d)
 
 
 
