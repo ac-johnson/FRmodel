@@ -1,14 +1,14 @@
 #!/bin/bash
 
-#SBATCH --partition=$PART
+#SBATCH --partition=t1standard
 #SBATCH --job-name=FRr2_$id
 #SBATCH --ntasks=$NN
 #SBATCH --tasks-per-node=24
-#SBATCH --account=ICESHEET
+#SBATCH --account=FUTURARC
 #SBATCH --mail-user=acjohnson16@alaska.edu
 #SBATCH --mail-type=FAIL
 #SBATCH --output=$sloc/logs/pismlog_$id.%j
-#SBATCH --time=00-12:00:00
+#SBATCH --time=00-08:00:00
 
 umask 007
 ulimit -s unlimited

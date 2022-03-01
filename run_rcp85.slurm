@@ -1,10 +1,10 @@
 #!/bin/bash
 
-#SBATCH --partition=$PART
+#SBATCH --partition=t1standard
 #SBATCH --job-name=FRr8_$id
 #SBATCH --ntasks=$NN
 #SBATCH --tasks-per-node=24
-#SBATCH --account=ICESHEET
+#SBATCH --account=FUTURARC
 #SBATCH --mail-user=acjohnson16@alaska.edu
 #SBATCH --mail-type=FAIL
 #SBATCH --output=$sloc/logs/pismlog_$id.%j
