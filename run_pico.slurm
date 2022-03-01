@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#SBATCH --partition=t1standard
+#SBATCH --partition=t1small
 #SBATCH --job-name=FRp$runtemp$id
 #SBATCH --ntasks=$NN
 #SBATCH --tasks-per-node=24
