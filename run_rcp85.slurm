@@ -8,7 +8,7 @@
 #SBATCH --mail-user=acjohnson16@alaska.edu
 #SBATCH --mail-type=FAIL
 #SBATCH --output=$sloc/logs/pismlog_$id.%j
-#SBATCH --time=00-12:00:00
+#SBATCH --time=00-08:00:00
 
 umask 007
 ulimit -s unlimited
