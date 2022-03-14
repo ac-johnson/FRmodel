@@ -23,16 +23,34 @@ mpiexec -n $NN -machinefile ./nodes.$SLURM_JOB_ID pismr -i $inspin -surface give
 
 #-extra_file $sloc/extra/extra_$id.nc -extra_times -1:5:2000 -extra_vars velbar_mag,mask,dbdt,topg,thk,usurf,ice_surface_temp,climatic_mass_balance,bmelt,tillwat,velsurf_mag,diffusivity 
 
+#Convert result_medium to result_thin:
+if test -f $sloc/output/result_thin_$id.nc;
+    then rm $sloc/output/result_thin_$id.nc;
+fi
 ncks -A -v x,y,lat,lon,velsurf_mag,thk,mask,shelfbmassflux $sloc/output/result_medium_$id.nc $sloc/output/result_thin_$id.nc
+if test -f $sloc/output/result_thin_$id.nc;
+    then rm $sloc/output/result_medium_$id.nc;
+    rm $sloc/output/result_medium_$id_backup.nc;
+    rm $sloc/output/result_medium_$id_backup.nc~;
+fi
+
+#Convert result_thin to result
+if test -f $sloc/output/result_$id.nc;
+    then rm $sloc/output/result_$id.nc;
+fi
 ncks -4 -L 2 $sloc/output/result_thin_$id.nc $sloc/output/result_$id.nc
+if test -f $sloc/output/result_$id.nc;
+    then rm $sloc/output/result_thin_$id.nc;
+fi
+
+#Convert extra_large to extra
+if test -f $sloc/extra/extra_$id.nc;
+    then rm $sloc/output/extra_$id.nc;
+fi
 ncks -4 -L 2 $sloc/extra/extra_large_$id.nc $sloc/extra/extra_$id.nc
-
-rm $sloc/output/result_medium_$id.nc
-rm $sloc/output/result_thin_$id.nc
-rm $sloc/extra/extra_large_$id.nc
-rm $sloc/output/result_medium_$id_backup.nc
-rm $sloc/output/result_medium_$id_backup.nc~
-
+if test -f $sloc/extra/extra_$id.nc;
+    then rm $sloc/extra/extra_large_$id.nc;
+fi
 
 # Clean up the machinefile
 rm ./nodes.$SLURM_JOB_ID

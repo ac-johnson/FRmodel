@@ -11,7 +11,7 @@ Created on Mon Feb 14 16:02:17 2022
 import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib.colors as colors
-import matplotlib.cbook as cbook
+# import matplotlib.cbook as cbook
 from matplotlib import cm
 
 
@@ -33,7 +33,6 @@ def convertcolormap(filename,ticks=None,rangelim=None, plotcb=True,
         aspect - aspect ratio of the colorbar. Smaller values make the bar fatter.
         plotting tools: label, fontsize (for label), ticks (list to display on plot),
             ticklabelsize.
-    
     '''
     
     with open(fname) as f:
@@ -65,7 +64,7 @@ def convertcolormap(filename,ticks=None,rangelim=None, plotcb=True,
     if plotcb==True:
         plt.figure(figsize=(cbheight,cbheight))
         ax = plt.gca()
-        cbar = plt.colorbar(cm.ScalarMappable(cmap=cmap1,norm=norm1),aspect=12)
+        cbar = plt.colorbar(cm.ScalarMappable(cmap=cmap1,norm=norm1),aspect=aspect)
         if ticks==None:
             ticks=cbar.get_ticks()
         cbar.set_ticks(ticks)
@@ -83,4 +82,11 @@ if __name__ == '__main__':
     fname = 'itslive_colors.txt'
     # convertcolormap(fname)
     ticks = [0,100,200,300,500,750,1000,1250,1500,1750,2000]
-    convertcolormap(fname,rangelim=[0,2000],ticks=ticks,label='Ice speed (m a$^{-1}$)')
+    convertcolormap(fname,rangelim=[0,2000],ticks=ticks,label='Ice speed (m a$^{-1}$)',
+                    aspect=8,fontsize=32,ticklabelsize=25)
+    
+    
+    
+    
+    
+    
