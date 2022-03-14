@@ -42,4 +42,13 @@ for T in templist:
 	for i in runlist:
 		resultfile = f'picoruns/ocean_{T}/output/result_{i}.nc'
 		if not exists(resultfile):
-			print(f'No result: run {i}')
+			#print(f'No result: run {i}')
+			#failstate = 'unknown'
+			if exists(f'picoruns/ocean_{T}/output/result_medium_{i}_stressbalance_failed.nc'):
+				#failstate='stress'
+				print(f'Run {i} failed: stressbalance')
+			elif exists(f'picoruns/ocean_{T}/output/result_medium_{i}_max_thickness.nc')
+				print(f'Run {i} failed: max thickness')
+			else:
+				print(f'Run {i} failed: reason unknown')
+				
