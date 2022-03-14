@@ -40,6 +40,6 @@ runlist = range(0,100)
 for T in templist:
 	print(f'\n{T}')
 	for i in runlist:
-    	resultfile = f'picoruns/ocean_{T}/output/result_{i}.nc'
+		resultfile = f'picoruns/ocean_{T}/output/result_{i}.nc'
     	if not exists(resultfile):
 			print(f'No result: run {i}')
