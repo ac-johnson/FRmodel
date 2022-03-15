@@ -41,6 +41,8 @@ for T in templist:
 	print(f'\n{T}')
 	for i in runlist:
 		resultfile = f'picoruns/ocean_{T}/output/result_{i}.nc'
+		extrafile = f'picoruns/ocean_{T}/extra/extra_{i}.nc'
+		timeseriesfile = f'picoruns/ocean_{T}/extra/timeseries_{i}.nc'
 		if not exists(resultfile):
 			#print(f'No result: run {i}')
 			#failstate = 'unknown'
@@ -51,4 +53,7 @@ for T in templist:
 				print(f'Run {i} failed: max thickness')
 			else:
 				print(f'Run {i} failed: reason unknown')
+		if not exists(extrafile):
+			if exists(resultfile):
+				print(f'Run {i} succeeded but has no extra file. Weird!')			
 				
