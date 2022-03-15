@@ -51,4 +51,8 @@ for T in templist:
 				print(f'Run {i} failed: max thickness')
 			else:
 				print(f'Run {i} failed: reason unknown, redoing run')
-				os.system('sbatch picoruns/ocean_%s/runcmds/pico_run%s.slurm'%(T,i))				
+				os.system('sbatch picoruns/ocean_%s/runcmds/pico_run%s.slurm'%(T,i))
+		if not exists(extrafile):
+			if exists(resultfile):
+				print(f'Run {i} succeeded but has no extra file, redoing run')
+				os.system('sbatch picoruns/ocean_%s/runcmds/pico_run%s.slurm'%(T,i))			
