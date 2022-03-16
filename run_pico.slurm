@@ -1,10 +1,10 @@
 #!/bin/bash
 
-#SBATCH --partition=t1small
+#SBATCH --partition=t2small
 #SBATCH --job-name=FRp$runtemp$id
 #SBATCH --ntasks=$NN
 #SBATCH --tasks-per-node=24
-#SBATCH --account=FUTURARC
+#SBATCH --account=ICESHEET
 #SBATCH --mail-user=acjohnson16@alaska.edu
 #SBATCH --mail-type=FAIL
 #SBATCH --output=$sloc/logs/pismlog_$id.%j
@@ -14,8 +14,6 @@ umask 007
 ulimit -s unlimited
 ulimit -l unlimited
 ulimit
-
-export HDF5_USE_FILE_LOCKING=FALSE
 
 # Generate a list of allocated nodes; will serve as a machinefile for mpirun
 srun -l /bin/hostname | sort -n | awk '{print $2}' > ./nodes.$SLURM_JOB_ID
@@ -57,7 +55,7 @@ fi
 echo "Compressing extra_large"
 if test -f $sloc/extra/extra_$id.nc; then
     echo "removing old extra"
-    rm $sloc/output/extra_$id.nc
+    rm $sloc/extra/extra_$id.nc
 fi
 ncks -4 -L 2 $sloc/extra/extra_large_$id.nc $sloc/extra/extra_$id.nc
 if test -f $sloc/extra/extra_$id.nc; then
