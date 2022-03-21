@@ -39,7 +39,7 @@ print(os.system('pwd'))
 
 def purge(file):
     if exists(file):
-        print('Purging {file}')
+        print(f'Purging {file}')
         os.system(f'rm {file}')
 
 dopurge=False
