@@ -66,7 +66,7 @@ for T in templist:
             extralargefile = f'picoruns/ocean_{T}/extra/extra_large_{i}.nc'
             extralarge2file = f'picoruns/ocean_{T}/extra/extra_large_{i}.nc~'
             timeseriesfile = f'picoruns/ocean_{T}/extra/timeseries_{i}.nc'
-            timeseries2file = f'picoruns/ocean_{T}/extra/timeseries_{i}.nc'~
+            timeseries2file = f'picoruns/ocean_{T}/extra/timeseries_{i}.nc~'
             
             # purge(resultfile)
             purge(medfile)
