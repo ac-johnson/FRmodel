@@ -58,6 +58,7 @@ for T in templist:
         if dopurge:
             resultfile = f'picoruns/ocean_{T}/output/result_{i}.nc'
             medfile = f'picoruns/ocean_{T}/output/result_medium_{i}.nc'
+            med2file = f'picoruns/ocean_{T}/output/result_medium_{i}.nc~'
             medbackfile = f'picoruns/ocean_{T}/output/result_medium_{i}_backup.nc'
             medback2file = f'picoruns/ocean_{T}/output/result_medium_{i}_backup.nc~'
             extrafile = f'picoruns/ocean_{T}/extra/extra_{i}.nc'
@@ -68,6 +69,7 @@ for T in templist:
             
             # purge(resultfile)
             purge(medfile)
+            purge(med2file)
             purge(medbackfile)
             purge(medback2file)
             # purge(extrafile)
