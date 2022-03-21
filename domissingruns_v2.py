@@ -33,7 +33,7 @@ for t in sys.argv[3:]:
     templist.append(t)
 
 rundir = '/import/c1/ICESHEET/ICESHEET/uaf-antarctica/filron/filron_runs/'
-missing = np.load('missing/npy')
+missing = np.load('missing.npy')
 
 os.chdir(rundir)
 print(os.system('pwd'))
