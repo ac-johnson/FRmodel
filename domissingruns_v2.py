@@ -45,7 +45,7 @@ for T in templist:
     for i in runlist:
         resultfile = f'picoruns/ocean_{T}/output/result_{i}.nc'
         extrafile = f'picoruns/ocean_{T}/extra/extra_{i}.nc'
-        crun = 'ocean_{T}/run_{i}'
+        crun = f'ocean_{T}/run_{i}'
         dorun = False
         if crun in missing:
             dorun=True
