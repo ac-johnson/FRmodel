@@ -37,8 +37,6 @@ rundir = '/import/c1/ICESHEET/ICESHEET/uaf-antarctica/filron/filron_runs/'
 os.chdir(rundir)
 print(os.system('pwd'))
 
-runlist = range(0,100)
-
 def purge(file):
     if exists(file):
         print('Purging {file}')
