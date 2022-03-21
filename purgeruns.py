@@ -41,7 +41,7 @@ runlist = range(0,100)
 
 def purge(file):
     if exists(file):
-        print('Purging {file}')
+        print(f'Purging {file}')
         os.system(f'rm {file}')
 
 dopurge=False
