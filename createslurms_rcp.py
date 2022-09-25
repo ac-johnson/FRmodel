@@ -96,13 +96,13 @@ for run in readCSVd:
             run['TGP3']=float(run['topg_to_phi_base'])+float(run['topg_to_phi_range'])
             
         surffile = f"maps/{surfmodels[int(run['surf_anom'])]}_2km_anomaly_{runtemp}_1995-2100_filron.nc"
-        print(surffile)
+        # print(surffile)
 
         run['sa_file']=surffile
         
         run['pico_c']=float(run['pico_c'])*1e6
         run['pico_g']=float(run['pico_g'])
-        print(run['pico_g'])
+        # print(run['pico_g'])
     
     #        currentdir = dirname + run['runname']
         
