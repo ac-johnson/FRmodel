@@ -95,7 +95,7 @@ for run in readCSVd:
             run['TGP2']=run['topg_to_phi_base']
             run['TGP3']=float(run['topg_to_phi_base'])+float(run['topg_to_phi_range'])
             
-        surffile = f"maps/{surfmodels[run['surf_anom']]}_2km_anomaly_{runtemp}_1995-2100_filron.nc"
+        surffile = f"maps/{surfmodels[int(run['surf_anom'])]}_2km_anomaly_{runtemp}_1995-2100_filron.nc"
 
         run['surf_anom_file']=surffile
         run['pico_c']*=1e6
