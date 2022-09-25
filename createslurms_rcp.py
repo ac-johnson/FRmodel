@@ -52,6 +52,8 @@ maxrunnum = 400
 partition = 't2small'
 nodes = '48'
 
+surfmodels = ['NORESM','CCSM4','MIROC_ESM_CHEM']
+
 #runnums = np.array(setrunlist)
 
 #setrunlist = ['run'+str(i) for i in setrunlist]
@@ -92,6 +94,11 @@ for run in readCSVd:
         if run['topg_to_phi_base']:
             run['TGP2']=run['topg_to_phi_base']
             run['TGP3']=float(run['topg_to_phi_base'])+float(run['topg_to_phi_range'])
+            
+        surffile = f"maps/{surfmodels[run['surf_anom']]}_2km_anomaly_{runtemp}_1995-2100_filron.nc"
+
+        run['surf_anom_file']=surffile
+        run['pico_c']*=1e6
     
     #        currentdir = dirname + run['runname']
         
