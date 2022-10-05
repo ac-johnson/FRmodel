@@ -28,6 +28,60 @@ X_sample = X_posterior.to_numpy()[mc_indices, 1:]
 
 #%%
 
+testfile = "config/random_posterior_samples.csv"
+testdata = pd.read_csv(testfile)
+# csvfile2 = open(testfile)
+# readCSVd2 = csv.DictReader(csvfile)
+
+pgv = (testdata['pico_g'])[70:150]
+pcv = (testdata['pico_c'])[70:150]
+
+pgv2 = (testdata['pico_g'])[:70]
+pcv2 = (testdata['pico_c'])[:70]
+
+pgv3 = (testdata['pico_g'])[150:200]
+pcv3 = (testdata['pico_c'])[150:200]
+
+pcv4 = (testdata['pico_c'])[:150]
+
+climdata3 = (testdata['surf_anom'])[150:200]
+
+def picovec(n):
+    pc = []
+    pg = []
+    for i in range(n):
+        pgi,pci = samplepico()
+        pc.append(pci)
+        pg.append(pgi)
+    return pg,pc
+
+def testpc(n):
+    pc = []
+    pg = []
+    for i in range(n):
+        pgi,pci = samplepico()
+        pc.append(pci)
+        pg.append(pgi)
+    return np.median(pc),np.mean(pc),np.std(pc)
+
+#%%
+pgvec,pcvec = picovec(50)
+plt.figure();plt.hist(pcvec)
+plt.figure();plt.hist(np.append(pcv4,pcvec))
+print(np.median(pcvec))
+print(np.mean(pcvec))
+
+#%%
+n=50
+climv = []
+for i in range(n):
+    climv.append(samplesurf())
+climv = np.array(climv)
+print(f'{np.sum(climv==0)}, {np.sum(climv==1)}, {np.sum(climv==2)}')
+print(f'{np.sum(climv==0)+52}, {np.sum(climv==1)+50}, {np.sum(climv==2)+48}')
+
+#%%
+
 keys = keys[0:6]
 X_sample = X_sample[0:n_samples,0:6]
 
@@ -52,7 +106,7 @@ print(f'Pico model >1: {np.sum(checkset[:,7]>1.)}')
 
 # Convert to Pandas dataframe, append column headers, output as csv
 df = pd.DataFrame(X_sample)
-df.to_csv("config/random_posterior_samples.csv", header=keys, index=True)
+# df.to_csv("config/random_posterior_samples.csv", header=keys, index=True)
 
 #%%
 

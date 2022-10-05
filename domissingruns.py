@@ -35,7 +35,7 @@ rundir = '/import/c1/ICESHEET/ICESHEET/uaf-antarctica/filron/filron_runs/'
 os.chdir(rundir)
 print(os.system('pwd'))
 
-runlist = range(0,100)
+runlist = range(0,200)
 
 for T in templist:
 	print(f'\n{T}')
